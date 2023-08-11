@@ -1,0 +1,10 @@
+# Package Manager
+node_modules
+
+# Bundle
+coverage
+dist
+
+# ESLint 默认忽略对 . 开头文件的检查，需要用 ! 反向声明忽略。
+!.eslintrc.js
+!.prettierrc.js

@@ -1,0 +1,11 @@
+.VPHomeHero .clip {
+  font-weight: 400;
+}
+.VPHomeHero .text {
+  font-size: 40px;
+  font-weight: 300;
+}
+.VPHomeHero .tagline {
+  padding-top: 0;
+  font-weight: 300;
+}

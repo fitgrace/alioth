@@ -1,0 +1,15 @@
+{
+  "name": "@alioth/utils",
+  "version": "0.0.1",
+  "description": "web utils functions lib for alioth",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "types",
+    "lib",
+    "esm",
+    "README.md"
+  ],
+  "scripts": {}
+}

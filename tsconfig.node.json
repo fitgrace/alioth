@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": ["ESNext"]
+  },
+  "include": ["scripts/**/*", "**/*.config.*"],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,52 @@
+{
+  "name": "alioth",
+  "private": true,
+  "scripts": {
+    "lint:fix": "eslint --cache --quiet --ext .js,.jsx,.ts,.tsx --fix scripts apps/**/src packages/**/src",
+    "lint:css": "stylelint --fix {apps,packages}/**/src/*.{css,html}",
+    "postinstall": "simple-git-hooks",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false",
+    "commit-msg": "pnpm exec tsx scripts/verify-commit.ts $1"
+  },
+  "lint-staged": {
+    "{apps,packages,scripts}/**/.{json,yaml,md}": [
+      "prettier --write --cache --ignore-unknown"
+    ],
+    "{apps,packages,scripts}/**/.{ts?(x),js?(x)}": [
+      "eslint --cache --fix"
+    ],
+    "{apps,packages}/**/.{css,html}": [
+      "stylelint --cache --fix"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.9",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-react-hooks": "^1.0.0",
+    "eslint-define-config": "^1.23.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "lint-staged": "^13.2.3",
+    "picocolors": "^1.0.0",
+    "prettier": "^3.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-recess-order": "^4.3.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-stylistic": "^0.4.3",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
